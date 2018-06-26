@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <script>
+           function focusFunction(ash) {
+               
+    ash.style.background = "yellow";
+}
+            function blurFunction(pip) {
+                
+               var x=pip.value;
+               var u=/^[a-z]{1,}$/;
+               if(u.test(x))
+                   pip.style.background = "green";
+               else
+               {
+                   pip.value = "";
+                   pip.style.background = "white";
+               }
+               
+            }
+            function psd()
+            {
+                var x=document.getElementById("pwd").value;
+                var y=/^[a-zA-Z0-9]{7,}$/;
+                
+                if(y.test(x))
+                {
+                    document.getElementById("pwd").style.background="green";
+                }
+                else
+                {
+                    document.getElementById("pwd").value="";
+                    document.getElementById("pwd").style.background="white";
+                }
+            }
+            function emailcheck(bid)
+            {
+                var e=bid.value;
+                var c=/^[a-zA-Z0-9]{1,}\@[a-zA-Z]{5,5}\.[a-zA-Z]{2,4}$/;
+                if(c.test(e))
+                     bid.style.background = "green";
+               else
+               {
+                   bid.value = "";
+                   bid.style.background = "white";
+               }
+                    
+            }
+            function pwdtest()
+            {
+                var x=document.getElementById("pwd").value;
+                var y=document.getElementById("repwd").value;
+           
+                if(x!=y)
+                {
+                    alert("password not matching");
+                    document.getElementById("repwd").value="";
+                }
+            }
+            function set(){
+             document.getElementById("otpc").value=Math.floor((Math.random() * 10000) + 1);;
+         }
+            </script>
+    </head>
+    
+	<body>
+        <center><h2>All the details are mandatory!!</h2></center>
+	<p id="demo">
+        <h1 style="text-align:center"><b>SIGN UP FORM</b></h1>
+        <form action="otp.php" method="GET" enctype="multipart/form-data">
+            <table cellpadding="10" align="center">
+                <tr>
+                    <td>USERNAME:</td>
+                    <td colspan="2"><input type="text" name="name" id="lol" onblur="blurFunction(this)" onfocus="focusFunction(this)" required ></td>
+            </tr>
+           
+            <tr>
+                <td>PASSWORD:</td>
+                <td colspan="2"><input type="password" name="pwd" id="pwd" onblur="psd()" required ></td>
+            </tr>
+            <tr>
+                <td>RETYPE PASSWORD</td>
+                <td colspan="2"><input type="password" name="repwd" id="repwd" onblur="pwdtest()"  required></td>
+            </tr>
+            <tr>
+                <td>EMAIL ID:</td>
+                <td colspan="2"><input type="text" name="email" id="email" onfocus="focusFunction(this)" onblur="emailcheck(this)" required></td>
+            </tr>
+            <tr>
+                <td>GENDER:<td>
+                <td><input type="radio" name="gender" value="M">male</td>
+                <td><input type="radio" name="gender" value="F">female</td>
+            </tr>
+            <tr>
+                <td>PHONE NUMBER:</td>
+                <td colspan="2"><input type="text" name="phno" required/></td>
+            </tr>
+            </table>
+                <center><input type="submit" name='insert' value="save" onclick="set()"></center>
+                <input type="hidden" name="otpc" id='otpc' value="" />
+                
+        </form>
+	</body>
+</html>

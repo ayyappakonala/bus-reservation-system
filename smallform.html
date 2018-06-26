@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+             html,body{
+                height: 100%;
+            }
+            .b1 {
+                background-image: url("pics/bg3.jpg");
+                    height: 100%;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+            }
+        </style>
+    </head>
+    <body class="b1">
+        <form action="usercheck.php" method="GET">
+            <table align="center">
+                <tr>
+                    <td>username:</td>
+                    <td colspan="2"><input type="text" name="username"><br></td>
+                </tr>
+                <tr>
+                    <td> password:</td>
+                    <td colspan="2"><input type="password" name="pwd" value="" /> <br></td>
+                    
+                </tr>
+            </table>
+            <center><input type="submit" value="Login"></center>
+        </form>
+    
+    </body>
+</html>
